@@ -1,0 +1,1003 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Pizza",
+      "description": "Freshly baked pizzas"
+    },
+    {
+      "id": 2,
+      "name": "Fast Food",
+      "description": "Burgers, hot dogs, lavash and more"
+    },
+    {
+      "id": 3,
+      "name": "Desserts",
+      "description": "Sweet cakes, donuts and cinnamon rolls"
+    },
+    {
+      "id": 4,
+      "name": "Drinks",
+      "description": "Refreshing drinks and juices"
+    },
+    {
+      "id": 5,
+      "name": "Snacks",
+      "description": "Crispy fries and chicken nuggets"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Texas Grill Pizza",
+      "description": "Kebab meat, pickled cucumbers, red onions, tomatoes, and BBQ sauce.",
+      "price": 85000,
+      "category_id": 1,
+      "category_slug": "pizza",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 2,
+      "name": "Pepperoni Pizza",
+      "description": "Pepperoni, mozzarella cheese, and tomato sauce.",
+      "price": 75000,
+      "category_id": 1,
+      "category_slug": "pizza",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 3,
+      "name": "Cheddar Doner Pizza",
+      "description": "Doner meat, cheddar sauce, bell peppers, and red onions.",
+      "price": 80000,
+      "category_id": 1,
+      "category_slug": "pizza",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 4,
+      "name": "Meat Mix Pizza",
+      "description": "A mix of doner, kebab, cheeseburger, and pepperoni flavors.",
+      "price": 95000,
+      "category_id": 1,
+      "category_slug": "pizza",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 5,
+      "name": "Cheese Pizza",
+      "description": "Mozzarella cheese and alfredo sauce.",
+      "price": 65000,
+      "category_id": 1,
+      "category_slug": "pizza",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 6,
+      "name": "Mr. Pep",
+      "description": "Pepperoni and mozzarella cheese.",
+      "price": 75000,
+      "category_id": 1,
+      "category_slug": "pizza",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 7,
+      "name": "Freeman Pizza",
+      "description": "French fries, sausage, tomato sauce, and mozzarella.",
+      "price": 70000,
+      "category_id": 1,
+      "category_slug": "pizza",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 8,
+      "name": "Four Seasons Pizza",
+      "description": "Four different pizza flavors in one.",
+      "price": 95000,
+      "category_id": 1,
+      "category_slug": "pizza",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 9,
+      "name": "Alfredo Pizza",
+      "description": "Chicken, mushrooms, and alfredo sauce.",
+      "price": 75000,
+      "category_id": 1,
+      "category_slug": "pizza",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 10,
+      "name": "Cheesy Chicken Pizza",
+      "description": "Chicken, tomatoes, and special cheese sauce.",
+      "price": 70000,
+      "category_id": 1,
+      "category_slug": "pizza",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 11,
+      "name": "Double Pepperoni Pizza",
+      "description": "Extra pepperoni and mozzarella cheese.",
+      "price": 90000,
+      "category_id": 1,
+      "category_slug": "pizza",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 12,
+      "name": "Ranch Chicken Pizza",
+      "description": "Chicken, tomatoes, and ranch sauce.",
+      "price": 75000,
+      "category_id": 1,
+      "category_slug": "pizza",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 13,
+      "name": "Hot Dog",
+      "description": "Classic hot dog with sausage.",
+      "price": 18000,
+      "category_id": 2,
+      "category_slug": "fast-food",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 14,
+      "name": "Cheese Hot Dog",
+      "description": "Hot dog with cheese and sausage.",
+      "price": 22000,
+      "category_id": 2,
+      "category_slug": "fast-food",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 15,
+      "name": "Royal Hot Dog",
+      "description": "Hot dog with special ingredients.",
+      "price": 28000,
+      "category_id": 2,
+      "category_slug": "fast-food",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 16,
+      "name": "Shawarma",
+      "description": "Meat shawarma.",
+      "price": 30000,
+      "category_id": 2,
+      "category_slug": "fast-food",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 17,
+      "name": "Chicken Shawarma",
+      "description": "Chicken shawarma.",
+      "price": 28000,
+      "category_id": 2,
+      "category_slug": "fast-food",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 18,
+      "name": "Cheesy Mini Lavash",
+      "description": "Mini lavash wrap with cheese.",
+      "price": 25000,
+      "category_id": 2,
+      "category_slug": "fast-food",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 19,
+      "name": "Tandir Cheese Lavash",
+      "description": "Cheese lavash baked in a traditional clay oven.",
+      "price": 35000,
+      "category_id": 2,
+      "category_slug": "fast-food",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 20,
+      "name": "Mini Lavash",
+      "description": "Mini sized lavash wrap.",
+      "price": 22000,
+      "category_id": 2,
+      "category_slug": "fast-food",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 21,
+      "name": "Large Lavash",
+      "description": "Large sized lavash wrap.",
+      "price": 30000,
+      "category_id": 2,
+      "category_slug": "fast-food",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 22,
+      "name": "Tandir Lavash",
+      "description": "Lavash wrap baked in a traditional clay oven.",
+      "price": 32000,
+      "category_id": 2,
+      "category_slug": "fast-food",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 23,
+      "name": "Large Cheese Lavash",
+      "description": "Large sized lavash wrap with cheese.",
+      "price": 38000,
+      "category_id": 2,
+      "category_slug": "fast-food",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 24,
+      "name": "Hamburger",
+      "description": "Burger with vegetables, cheese, and lettuce.",
+      "price": 28000,
+      "category_id": 2,
+      "category_slug": "fast-food",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 25,
+      "name": "Sandwich",
+      "description": "Meat sandwich.",
+      "price": 22000,
+      "category_id": 2,
+      "category_slug": "fast-food",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 26,
+      "name": "Crispy Chicken (KFC Style)",
+      "description": "Crispy fried chicken pieces.",
+      "price": 30000,
+      "category_id": 2,
+      "category_slug": "fast-food",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 27,
+      "name": "Assorted Desserts",
+      "description": "Chocolate and fruit desserts.",
+      "price": 25000,
+      "category_id": 3,
+      "category_slug": "desserts",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 28,
+      "name": "Cinnamon Rolls (4 pcs) 👶",
+      "description": "4 pieces of cinnamon rolls.",
+      "price": 18000,
+      "category_id": 3,
+      "category_slug": "desserts",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 29,
+      "name": "Cinnamon Rolls (8 pcs) 👶",
+      "description": "8 pieces of cinnamon rolls.",
+      "price": 30000,
+      "category_id": 3,
+      "category_slug": "desserts",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 30,
+      "name": "Cinnamon Rolls (16 pcs) 👶",
+      "description": "16 pieces of cinnamon rolls.",
+      "price": 45000,
+      "category_id": 3,
+      "category_slug": "desserts",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 31,
+      "name": "Chocolate Cheesecake",
+      "description": "Rich chocolate cheesecake.",
+      "price": 30000,
+      "category_id": 3,
+      "category_slug": "desserts",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 32,
+      "name": "Chocolate Fondant",
+      "description": "Warm chocolate lava cake.",
+      "price": 25000,
+      "category_id": 3,
+      "category_slug": "desserts",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 33,
+      "name": "Berry Donut",
+      "description": "Donut with berry glaze.",
+      "price": 12000,
+      "category_id": 3,
+      "category_slug": "desserts",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 34,
+      "name": "Hazelnut Donut",
+      "description": "Donut with hazelnut and chocolate.",
+      "price": 14000,
+      "category_id": 3,
+      "category_slug": "desserts",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 35,
+      "name": "Strawberry Donut",
+      "description": "Strawberry glazed donut.",
+      "price": 12000,
+      "category_id": 3,
+      "category_slug": "desserts",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 36,
+      "name": "Small French Fries",
+      "description": "Small portion of French fries.",
+      "price": 10000,
+      "category_id": 5,
+      "category_slug": "snacks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 37,
+      "name": "Medium French Fries",
+      "description": "Medium portion of French fries.",
+      "price": 16000,
+      "category_id": 5,
+      "category_slug": "snacks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 38,
+      "name": "Large French Fries",
+      "description": "Large portion of French fries.",
+      "price": 30000,
+      "category_id": 5,
+      "category_slug": "snacks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 39,
+      "name": "Country Wedges",
+      "description": "Rustic style potato wedges.",
+      "price": 18000,
+      "category_id": 5,
+      "category_slug": "snacks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 40,
+      "name": "Giant French Fries",
+      "description": "Extra large portion of French fries.",
+      "price": 35000,
+      "category_id": 5,
+      "category_slug": "snacks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 41,
+      "name": "Chicken Bites",
+      "description": "Crispy chicken bites snack.",
+      "price": 25000,
+      "category_id": 5,
+      "category_slug": "snacks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 42,
+      "name": "Chicken Nuggets (5 pcs)",
+      "description": "5 pieces of chicken nuggets.",
+      "price": 15000,
+      "category_id": 5,
+      "category_slug": "snacks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 43,
+      "name": "Chicken Nuggets (8 pcs)",
+      "description": "8 pieces of chicken nuggets.",
+      "price": 22000,
+      "category_id": 5,
+      "category_slug": "snacks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 44,
+      "name": "Chicken Nuggets (15 pcs)",
+      "description": "15 pieces of chicken nuggets.",
+      "price": 35000,
+      "category_id": 5,
+      "category_slug": "snacks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 45,
+      "name": "Nuggets Box",
+      "description": "Special box of chicken nuggets.",
+      "price": 28000,
+      "category_id": 5,
+      "category_slug": "snacks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 46,
+      "name": "Bread",
+      "description": "Fresh bread.",
+      "price": 3000,
+      "category_id": 5,
+      "category_slug": "snacks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 47,
+      "name": "Coca-Cola",
+      "description": "Carbonated cola drink",
+      "price": 10000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 48,
+      "name": "Coca-Cola Zero",
+      "description": "Sugar-free cola drink",
+      "price": 10000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 49,
+      "name": "Fanta Orange",
+      "description": "Orange flavored carbonated drink",
+      "price": 10000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 50,
+      "name": "Sprite",
+      "description": "Lemon and lime flavored drink",
+      "price": 10000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 51,
+      "name": "Pepsi",
+      "description": "Carbonated cola drink",
+      "price": 10000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 52,
+      "name": "Pepsi Zero Sugar",
+      "description": "Sugar-free cola drink",
+      "price": 10000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 53,
+      "name": "7UP",
+      "description": "Lemon and lime flavored drink",
+      "price": 10000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 54,
+      "name": "Mirinda",
+      "description": "Orange flavored drink",
+      "price": 10000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 55,
+      "name": "Mountain Dew",
+      "description": "Citrus flavored drink",
+      "price": 12000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 56,
+      "name": "Dr Pepper",
+      "description": "Carbonated drink",
+      "price": 16000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 57,
+      "name": "Red Bull",
+      "description": "Energy drink",
+      "price": 18000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 58,
+      "name": "Monster Energy",
+      "description": "Energy drink",
+      "price": 22000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 59,
+      "name": "HELL Energy",
+      "description": "Energy drink",
+      "price": 14000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 60,
+      "name": "Flash Energy",
+      "description": "Energy drink",
+      "price": 10000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 61,
+      "name": "Gorilla Energy",
+      "description": "Energy drink",
+      "price": 12000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 62,
+      "name": "Adrenaline Rush",
+      "description": "Energy drink",
+      "price": 16000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 63,
+      "name": "18+ Energy",
+      "description": "Energy drink",
+      "price": 12000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 64,
+      "name": "Ice Tea",
+      "description": "Iced tea",
+      "price": 12000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 65,
+      "name": "Mojito",
+      "description": "Mint and lime flavored drink",
+      "price": 15000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 66,
+      "name": "Rootiz",
+      "description": "Fruit drink",
+      "price": 15000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 67,
+      "name": "Chortoq",
+      "description": "Mineral water",
+      "price": 8000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 68,
+      "name": "Cappy",
+      "description": "Fruit juice",
+      "price": 14000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 69,
+      "name": "Montella",
+      "description": "Drinking water",
+      "price": 7000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 70,
+      "name": "Hydrolife",
+      "description": "Drinking water",
+      "price": 7000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 71,
+      "name": "Fuse Tea Lemon",
+      "description": "Lemon iced tea",
+      "price": 12000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 72,
+      "name": "Lal Anar",
+      "description": "Fruit drink",
+      "price": 15000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 73,
+      "name": "Micco",
+      "description": "Fruit drink",
+      "price": 12000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 74,
+      "name": "Flavis",
+      "description": "Fruit drink",
+      "price": 12000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 75,
+      "name": "Chernogolovka",
+      "description": "Carbonated drink",
+      "price": 16000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    },
+    {
+      "id": 76,
+      "name": "Lipton",
+      "description": "Iced tea",
+      "price": 12000,
+      "category_id": 4,
+      "category_slug": "drinks",
+      "image": "",
+      "stock": 100
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "admin",
+      "email": "admin@burger.uz",
+      "password": "$2b$10$28Qwzyzp8crPYYT1cSTSreRXwrISUJqouQNCuRCoseZDLvv1uUdue",
+      "role": "admin",
+      "customer_id": 1
+    },
+    {
+      "id": 2,
+      "name": "salakh.bro",
+      "email": "salakh.bro@example.com",
+      "password": "$2b$10$28Qwzyzp8crPYYT1cSTSreRXwrISUJqouQNCuRCoseZDLvv1uUdue",
+      "role": "admin",
+      "customer_id": 2
+    },
+    {
+      "id": 3,
+      "name": "demo",
+      "email": "demo@burger.uz",
+      "password": "$2b$10$MHIKjIfpN3ZX.11oN7wj7efI6AolA3qjj3rBDaZIWDod3J5fgrZqm",
+      "role": "user",
+      "customer_id": 3
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "admin",
+      "email": "admin@burger.uz",
+      "phone": "+998901234567",
+      "address": "Tashkent, Amir Temur 10"
+    },
+    {
+      "id": 2,
+      "name": "salakh.bro",
+      "email": "salakh.bro@example.com",
+      "phone": "+998909876543",
+      "address": "Tashkent, Chilonzor 5"
+    },
+    {
+      "id": 3,
+      "name": "demo",
+      "email": "demo@burger.uz",
+      "phone": "+998935554433",
+      "address": "Tashkent, Yunusobod 12"
+    }
+  ],
+  "orders": [
+    {
+      "id": 101,
+      "user_id": 3,
+      "total_price": "115000.00",
+      "status": "completed",
+      "address": "Tashkent, Yunusobod 12, kv 45",
+      "createdAt": "2026-11-04T00:34:30.337Z",
+      "items": [
+        {
+          "id": 1,
+          "order_id": 101,
+          "product_id": 1,
+          "quantity": 1,
+          "unit_price": 85000,
+          "product": {
+            "id": 1,
+            "name": "Texas Grill Pizza",
+            "description": "Kebab meat, pickled cucumbers, red onions, tomatoes, and BBQ sauce.",
+            "price": 85000,
+            "category_id": 1,
+            "category_slug": "pizza",
+            "image": "",
+            "stock": 100
+          }
+        },
+        {
+          "id": 2,
+          "order_id": 101,
+          "product_id": 36,
+          "quantity": 3,
+          "unit_price": 10000,
+          "product": {
+            "id": 36,
+            "name": "Small French Fries",
+            "description": "Small portion of French fries.",
+            "price": 10000,
+            "category_id": 5,
+            "category_slug": "snacks",
+            "image": "",
+            "stock": 100
+          }
+        }
+      ],
+      "user": {
+        "id": 3,
+        "name": "demo",
+        "email": "demo@burger.uz"
+      }
+    },
+    {
+      "id": 102,
+      "user_id": 3,
+      "total_price": "75000.00",
+      "status": "preparing",
+      "address": "Tashkent, Yunusobod 12, kv 45",
+      "createdAt": "2026-11-05T21:34:30.338Z",
+      "items": [
+        {
+          "id": 3,
+          "order_id": 102,
+          "product_id": 2,
+          "quantity": 1,
+          "unit_price": 75000,
+          "product": {
+            "id": 2,
+            "name": "Pepperoni Pizza",
+            "description": "Pepperoni, mozzarella cheese, and tomato sauce.",
+            "price": 75000,
+            "category_id": 1,
+            "category_slug": "pizza",
+            "image": "",
+            "stock": 100
+          }
+        }
+      ],
+      "user": {
+        "id": 3,
+        "name": "demo",
+        "email": "demo@burger.uz"
+      }
+    },
+    {
+      "id": 103,
+      "user_id": 3,
+      "total_price": "46000.00",
+      "status": "pending",
+      "address": "Tashkent, Yunusobod 12, kv 45",
+      "createdAt": "2026-11-06T00:04:30.338Z",
+      "items": [
+        {
+          "id": 4,
+          "order_id": 103,
+          "product_id": 15,
+          "quantity": 1,
+          "unit_price": 28000,
+          "product": {
+            "id": 15,
+            "name": "Royal Hot Dog",
+            "description": "Hot dog with special ingredients.",
+            "price": 28000,
+            "category_id": 2,
+            "category_slug": "fast-food",
+            "image": "",
+            "stock": 100
+          }
+        },
+        {
+          "id": 5,
+          "order_id": 103,
+          "product_id": 38,
+          "quantity": 1,
+          "unit_price": 10000,
+          "product": {
+            "id": 38,
+            "name": "Large French Fries",
+            "description": "Large portion of French fries.",
+            "price": 30000,
+            "category_id": 5,
+            "category_slug": "snacks",
+            "image": "",
+            "stock": 100
+          }
+        }
+      ],
+      "user": {
+        "id": 3,
+        "name": "demo",
+        "email": "demo@burger.uz"
+      }
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "user_id": 3,
+      "product_id": 1,
+      "rating": 5,
+      "comment": "Juda ajoyib pitsa! Issiq va mazali yetkazib berildi.",
+      "createdAt": "2026-11-05T00:34:30.338Z"
+    },
+    {
+      "id": 2,
+      "user_id": 3,
+      "product_id": 24,
+      "rating": 5,
+      "comment": "Eng yoqtirgan burgerim. Har doim yangi go‘sht.",
+      "createdAt": "2026-11-05T12:34:30.338Z"
+    }
+  ],
+  "favorites": [
+    {
+      "id": 1,
+      "user_id": 3,
+      "product_id": 1
+    },
+    {
+      "id": 2,
+      "user_id": 3,
+      "product_id": 24
+    }
+  ],
+  "contacts": []
+}
