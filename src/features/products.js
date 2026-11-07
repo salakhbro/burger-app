@@ -113,7 +113,7 @@ import RunchPizza from '../assets/images/ranch.png'
 
 // Fast food images
 import HotDog from '../assets/images/hotdog.png'
-import Shawarma from '../assets/images/Shawarma.png'
+import Shawarma from '../assets/images/shawarma.png'
 import Hamburger from '../assets/images/hamburger.png'
 import TovuqliShawarma from '../assets/images/shawarmaa.png'
 import PishloqliHotDog from '../assets/images/pishloqli.hot.dog.png'
