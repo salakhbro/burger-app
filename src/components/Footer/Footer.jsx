@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Burgers from '../images/images.jpg'
+import { createContact } from '../../api/api.js'
+import { useToast } from '../Toast/useToast.js'
 import {
   FacebookIcon,
   InstagramIcon,
   TelegramIcon,
   TiktokIcon,
 } from '../../assets/icons'
+import { useLanguage } from '../../i18n/useLanguage.js'
 import '../../assets/style/Footer.css'
 
 const socials = [
@@ -17,6 +20,8 @@ const socials = [
 ]
 
 export default function Footer() {
+  const { t } = useLanguage()
+  const { showError } = useToast()
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -26,6 +31,7 @@ export default function Footer() {
   })
 
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
 
   const handleChange = (e) => {
     setForm({
@@ -36,18 +42,25 @@ export default function Footer() {
     setSent(false)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-
-    setSent(true)
-
-    setForm({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-    })
+    setSending(true)
+    try {
+      await createContact(form)
+      setSent(true)
+      setForm({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+      })
+    } catch (error) {
+      setSent(false)
+      showError(error.message || t('Could not send your message. Please try again.'))
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -55,32 +68,31 @@ export default function Footer() {
       <div className="container footer__inner">
 
         <Link to="/" className="footer__logo">
-          <img src={Burgers} className='footer__logo-icon' alt="burger" /> Burger
+          <img src={Burgers} className='footer__logo-icon' alt={t('Burger')} /> Burger
         </Link>
 
         <p className="footer__description">
-          Fresh burgers. Great taste. Happy moments.
+          {t('Fresh burgers. Great taste. Happy moments.')}
         </p>
 
         <div className="footer__contact-section">
 
           <div className="footer__contact-info">
-            <span className="footer__tag">GET IN TOUCH</span>
+            <span className="footer__tag">{t('GET IN TOUCH')}</span>
 
             <h2>
-              Let's talk about
-              <span> your next order!</span>
+              {t("Let's talk about")}
+              <span>{t(' your next order!')}</span>
             </h2>
 
             <p className="footer__info-text">
-              Have a question or want to order something delicious?
-              Send us a message. We'd love to hear from you!
+              {t("Have a question or want to order something delicious? Send us a message. We'd love to hear from you!")}
             </p>
 
             <div className="footer__info-item">
               <div className="footer__info-icon">☎</div>
               <div>
-                <h3>Phone Number</h3>
+                <h3>{t('Phone Number')}</h3>
                 <a href="tel:+998901234567">
                   +998 90 123 45 67
                 </a>
@@ -90,7 +102,7 @@ export default function Footer() {
             <div className="footer__info-item">
               <div className="footer__info-icon">⌖</div>
               <div>
-                <h3>Our Location</h3>
+                <h3>{t('Our Location')}</h3>
                 <p>Namangan, Langar</p>
               </div>
             </div>
@@ -98,8 +110,8 @@ export default function Footer() {
             <div className="footer__info-item">
               <div className="footer__info-icon">◷</div>
               <div>
-                <h3>Working Hours</h3>
-                <p>Every day: 08:00 – 23:00</p>
+                <h3>{t('Working Hours')}</h3>
+                <p>{t('Every day: 08:00 – 23:00')}</p>
               </div>
             </div>
           </div>
@@ -108,20 +120,21 @@ export default function Footer() {
             className="footer__contact-form"
             onSubmit={handleSubmit}
           >
-            <h3>Send Us a Message</h3>
+            <h3>{t('Send Us a Message')}</h3>
 
             <p className="footer__form-description">
-              Fill in the details below.
+              {t('Fill in the details below.')}
             </p>
 
             <div className="footer__form-row">
               <div className="footer__field">
-                <label htmlFor="contact-name">Your Name</label>
+                <label htmlFor="contact-name">{t('Your Name')}</label>
                 <input
                   id="contact-name"
                   name="name"
                   type="text"
-                  placeholder="Enter your name"
+                  minLength="3"
+                  placeholder={t('Enter your name')}
                   value={form.name}
                   onChange={handleChange}
                   required
@@ -129,7 +142,7 @@ export default function Footer() {
               </div>
 
               <div className="footer__field">
-                <label htmlFor="contact-phone">Phone Number</label>
+                <label htmlFor="contact-phone">{t('Phone Number')}</label>
                 <input
                   id="contact-phone"
                   name="phone"
@@ -143,7 +156,7 @@ export default function Footer() {
             </div>
 
             <div className="footer__field">
-              <label htmlFor="contact-email">Email Address</label>
+              <label htmlFor="contact-email">{t('Email Address')}</label>
               <input
                 id="contact-email"
                 name="email"
@@ -156,7 +169,7 @@ export default function Footer() {
             </div>
 
             <div className="footer__field">
-              <label htmlFor="contact-subject">Subject</label>
+              <label htmlFor="contact-subject">{t('Subject')}</label>
               <select
                 id="contact-subject"
                 name="subject"
@@ -165,21 +178,21 @@ export default function Footer() {
                 required
               >
                 <option value="" disabled>
-                  Choose a subject
+                  {t('Choose a subject')}
                 </option>
-                <option value="order">Food Order</option>
-                <option value="delivery">Delivery</option>
-                <option value="feedback">Feedback</option>
-                <option value="other">Other Questions</option>
+                <option value="order">{t('Food Order')}</option>
+                <option value="delivery">{t('Delivery')}</option>
+                <option value="feedback">{t('Feedback')}</option>
+                <option value="other">{t('Other Questions')}</option>
               </select>
             </div>
 
             <div className="footer__field">
-              <label htmlFor="contact-message">Your Message</label>
+              <label htmlFor="contact-message">{t('Your Message')}</label>
               <textarea
                 id="contact-message"
                 name="message"
-                placeholder="Write your message here..."
+                placeholder={t('Write your message here...')}
                 value={form.message}
                 onChange={handleChange}
                 rows="4"
@@ -187,13 +200,13 @@ export default function Footer() {
               />
             </div>
 
-            <button className="footer__submit" type="submit">
-              Send Message <span>→</span>
+            <button className="footer__submit" type="submit" disabled={sending}>
+              {sending ? t('Sending contact message...') : t('Send Message')} <span>→</span>
             </button>
 
             {sent && (
               <p className="footer__success">
-                ✓ Thank you! Your message has been received.
+                {t('✓ Thank you! Your message has been received.')}
               </p>
             )}
           </form>
@@ -202,8 +215,8 @@ export default function Footer() {
 
         <div className="footer__newsletter">
           <div>
-            <h3>Stay in the loop 🍔</h3>
-            <p>Subscribe to get our latest offers and news.</p>
+            <h3>{t('Stay in the loop 🍔')}</h3>
+            <p>{t('Subscribe to get our latest offers and news.')}</p>
           </div>
 
           <form
@@ -215,11 +228,11 @@ export default function Footer() {
           >
             <input
               type="email"
-              placeholder="Enter your email address"
-              aria-label="Newsletter email"
+              placeholder={t('Enter your email address')}
+              aria-label={t('Newsletter email')}
               required
             />
-            <button type="submit">Subscribe →</button>
+            <button type="submit">{t('Subscribe →')}</button>
           </form>
         </div>
 
@@ -239,7 +252,7 @@ export default function Footer() {
           </div>
 
           <p className="footer__copy">
-            © Burger {new Date().getFullYear()}. All rights reserved.
+            © Burger {new Date().getFullYear()}. {t('All rights reserved.')}
           </p>
         </div>
 

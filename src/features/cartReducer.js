@@ -1,37 +1,95 @@
-export const initialState = { cart: [], favorites: [] }
+
+export const initialState = {
+  cart: [],
+  favorites: [],
+}
 
 export function cartReducer(state, action) {
   switch (action.type) {
     case 'ADD': {
-      const { id, qty } = action
-      const exists = state.cart.some((item) => item.id === id)
-      const cart = exists
-        ? state.cart.map((item) => (item.id === id ? { ...item, qty: item.qty + qty } : item))
-        : [...state.cart, { id, qty }]
-      return { ...state, cart }
+      const existing = state.cart.find(
+        (item) => Number(item.id) === Number(action.id)
+      )
+
+      const qty = Math.max(1, Number(action.qty) || 1)
+
+      if (existing) {
+        return {
+          ...state,
+          cart: state.cart.map((item) =>
+            Number(item.id) === Number(action.id)
+              ? { ...item, qty: item.qty + qty }
+              : item
+          ),
+        }
+      }
+
+      return {
+        ...state,
+        cart: [
+          ...state.cart,
+          {
+            id: action.id,
+            qty,
+          },
+        ],
+      }
     }
+
     case 'SET_QTY': {
-      if (action.qty < 1) {
-        return { ...state, cart: state.cart.filter((item) => item.id !== action.id) }
-      }
       return {
         ...state,
-        cart: state.cart.map((item) => (item.id === action.id ? { ...item, qty: action.qty } : item)),
+        cart: state.cart.map((item) =>
+          Number(item.id) === Number(action.id)
+            ? {
+              ...item,
+              qty: Math.max(1, Number(action.qty) || 1),
+            }
+            : item
+        ),
       }
     }
-    case 'REMOVE':
-      return { ...state, cart: state.cart.filter((item) => item.id !== action.id) }
-    case 'CLEAR':
-      return { ...state, cart: [] }
+
+    case 'REMOVE': {
+      return {
+        ...state,
+        cart: state.cart.filter(
+          (item) => Number(item.id) !== Number(action.id)
+        ),
+      }
+    }
+
+    case 'CLEAR': {
+      return {
+        ...state,
+        cart: [],
+      }
+    }
+
     case 'TOGGLE_FAVORITE': {
-      const has = state.favorites.includes(action.id)
+      const id = Number(action.id)
+
+      const exists = state.favorites.some(
+        (favoriteId) => Number(favoriteId) === id
+      )
+
       return {
         ...state,
-        favorites: has
-          ? state.favorites.filter((id) => id !== action.id)
-          : [...state.favorites, action.id],
+        favorites: exists
+          ? state.favorites.filter(
+            (favoriteId) => Number(favoriteId) !== id
+          )
+          : [...state.favorites, id],
       }
     }
+
+    case 'SET_FAVORITES': {
+      return {
+        ...state,
+        favorites: [...new Set(action.ids.map(Number))],
+      }
+    }
+
     default:
       return state
   }

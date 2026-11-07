@@ -1,1 +1,3 @@
-export const formatPrice = (value) => `$${value.toFixed(2)}`
+export const formatPrice = (value) => {
+  return Number(value).toLocaleString('en-US');
+};

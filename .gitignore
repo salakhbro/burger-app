@@ -1,4 +1,33 @@
-node_modules
-dist
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Build files
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE
+.vscode/
+.idea/
+
+# OS
 .DS_Store
-*.local
+Thumbs.db
+
+# Temporary files
+coverage/
+tmp/
+temp/

@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
-// Route o'zgarganda tepaga, `/#menu` kabi hash bo'lsa shu bo'limga scroll qiladi.
 export default function ScrollToHash() {
   const { pathname, hash } = useLocation()
 
@@ -17,4 +16,4 @@ export default function ScrollToHash() {
   }, [pathname, hash])
 
   return null
-}
+};

@@ -5,15 +5,25 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "server": "node src/backend/server.js",
+    "seed": "node src/backend/seed.js",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "joi": "^18.3.0",
+    "lucide-react": "^1.61.0",
+    "pg": "^8.23.1",
+    "pg-hstore": "^2.3.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.28.0",
-    "swiper": "^11.1.14"
+    "react-router-dom": "^6.30.6",
+    "sequelize": "^6.37.8",
+    "swiper": "^11.2.10"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
@@ -23,6 +33,20 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
     "globals": "^15.11.0",
+    "nodemon": "^3.1.14",
     "vite": "^5.4.10"
-  }
+  },
+  "description": "Food delivery landing/shop (Vite + React 18 + react-router-dom v6 + Swiper).",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salakhbro/burger-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/salakhbro/burger-app/issues"
+  },
+  "homepage": "https://github.com/salakhbro/burger-app#readme"
 }

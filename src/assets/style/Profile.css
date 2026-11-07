@@ -1,0 +1,127 @@
+.profile-page {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 48px 16px;
+    background: #fafafa;
+}
+
+.profile-card {
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 24px;
+    padding: 36px 28px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
+}
+
+.profile-card__avatar {
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e63946, #ff8a3d);
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-card__name {
+    font-size: 24px;
+    margin: 0 0 4px;
+    color: #222;
+}
+
+.profile-card__email {
+    margin: 0 0 12px;
+    color: #777;
+    font-size: 14px;
+}
+
+.profile-card__role {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 999px;
+    background: #f1f1f1;
+    color: #555;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.profile-card__role.is-admin {
+    background: #fff3d6;
+    color: #b7791f;
+}
+
+.profile-card__stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.profile-card__stats div {
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 14px;
+    padding: 14px;
+}
+
+.profile-card__stats strong {
+    display: block;
+    font-size: 22px;
+    color: #222;
+}
+
+.profile-card__stats span {
+    font-size: 12px;
+    color: #888;
+}
+
+.profile-card__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.profile-card__actions button,
+.profile-card__logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.15s;
+}
+
+.profile-card__actions button {
+    border: 1px solid #eee;
+    background: #fff;
+    color: #333;
+}
+
+.profile-card__actions button:hover {
+    background: #f6f6f6;
+    transform: translateY(-1px);
+}
+
+.profile-card__logout {
+    border: none;
+    background: #222;
+    color: #fff;
+}
+
+.profile-card__logout:hover {
+    background: #e63946;
+}

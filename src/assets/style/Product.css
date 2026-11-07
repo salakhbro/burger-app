@@ -1,150 +1,1076 @@
-/* Product card + grid (Home, Category, Product sahifalarida ishlatiladi) */
+/* ==========================================
+   BURGER SHOP — PREMIUM PRODUCT DETAILS
+========================================== */
+
+.page {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding-top: 22px;
+  padding-bottom: 70px;
+  color: #202020;
+}
+
+/* Orqaga qaytish */
+.product__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 22px;
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.25s ease, gap 0.25s ease;
+}
+
+.product__back:hover {
+  gap: 11px;
+  color: #e99b00;
+}
+
+/* Asosiy mahsulot joylashuvi */
+.product__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: 52px;
+  margin-bottom: 65px;
+}
+
+/* Mahsulot rasmi */
+.product__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 440px;
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid #f0e8d9;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #fff7e8 0%, #fffdfa 55%, #ffffff 100%);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.product__visual::before {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(255, 190, 40, 0.09);
+  content: "";
+  z-index: -1;
+}
+
+.product__visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 14px 16px rgba(0, 0, 0, 0.10));
+  transition: transform 0.45s ease;
+}
+
+.product__visual:hover img {
+  transform: scale(1.045);
+}
+
+/* Mahsulot ma'lumotlari */
+.product__category {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 12px;
+  padding: 7px 13px;
+  border: 1px solid #ffe5a9;
+  border-radius: 999px;
+  background: #fff6df;
+  color: #a66a00;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.product__name {
+  margin: 0;
+  color: #1c1c1c;
+  font-size: clamp(29px, 3vw, 42px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -1.2px;
+  overflow-wrap: anywhere;
+}
+
+.product__desc {
+  margin: 15px 0 20px;
+  color: #777;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.product__price {
+  margin: 0 0 25px;
+  color: #191919;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+
+/* Xarid tugmalari */
+.product__buy {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Miqdor tanlash */
+.qty {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  min-width: 126px;
+  height: 48px;
+  padding: 4px;
+  border: 1px solid #e9e9e9;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.025);
+}
+
+.qty button {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #222;
+  font-family: inherit;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.qty button:hover {
+  background: #fff3d5;
+  color: #bd7a00;
+}
+
+.qty span {
+  min-width: 24px;
+  color: #222;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Savatga qo'shish */
+.btn--yellow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 27px;
+  border: 1px solid #ffb800;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ffc629, #ffb300);
+  color: #191919;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 750;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(255, 183, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn--yellow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 22px rgba(255, 183, 0, 0.25);
+}
+
+.btn--yellow:active {
+  transform: scale(0.97);
+}
+
+/* Sevimlilar */
+.heart-btn {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #ededed;
+  border-radius: 14px;
+  background: #fff;
+  color: #ff5555;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.heart-btn:hover {
+  transform: translateY(-2px);
+  background: #fff0f0;
+}
+
+.heart-btn.is-active {
+  border-color: #ffd5d5;
+  background: #fff0f0;
+  color: #f04444;
+}
+
+/* Savatga qo'silgan xabar */
+.product__added {
+  margin: 17px 0 0;
+  color: #26834a;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.product__added a {
+  margin-left: 4px;
+  color: #bd7a00;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.product__added a:hover {
+  color: #8b5900;
+}
+
+/* Tavsiya qilinadigan mahsulotlar */
+.related {
+  margin-top: 12px;
+}
+
+.related h2 {
+  margin: 0 0 23px;
+  color: #202020;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+
+.related .food-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Mahsulot topilmaganda */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  min-height: 50vh;
+  padding-top: 70px;
+}
+
+.page__title {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
+}
+
 .food-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
 }
 
 .food-card {
   display: flex;
   flex-direction: column;
-  padding: 18px 18px 16px;
-  border-radius: 14px;
-  background: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.2s;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid #eeeeee;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 5px 20px rgba(20, 20, 20, 0.035);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .food-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+  transform: translateY(-5px);
+  border-color: #ffe0a0;
+  box-shadow: 0 16px 36px rgba(30, 25, 10, 0.09);
 }
+
 .food-card__link {
-  display: block;
+  display: flex;
   flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
 }
+
 .food-card__img {
-  display: grid;
-  place-items: center;
-  height: 110px;
-  margin-bottom: 12px;
-  font-size: 84px;
-  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 205px;
+  margin-bottom: 18px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #fffaf0, #ffffff);
+  overflow: hidden;
 }
+
 .food-card__img img {
-  max-height: 100%;
+  width: 92%;
+  height: 92%;
   object-fit: contain;
+  object-position: center;
 }
+
 .food-card h3 {
-  font-size: 14px;
-  font-weight: 600;
+  margin: 0;
+  color: #202020;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45;
 }
+
 .food-card p {
-  margin-top: 2px;
-  font-size: 11px;
-  color: var(--muted);
+  display: -webkit-box;
+  margin: 7px 0 0;
+  color: #858585;
+  font-size: 12px;
+  line-height: 1.7;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
+
 .food-card__bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 16px;
-}
-.food-card__price {
-  font-size: 14px;
-  font-weight: 700;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 20px;
 }
 
-/* Product details page */
-.product__back {
+.food-card__price {
+  color: #191919;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.food-card__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.food-card__actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.heart-btn,
+.cart-btn {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border: none;
+  border-radius: 50%;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  margin-bottom: 24px;
-  font-size: 14px;
-  color: var(--muted);
+  justify-content: center;
+  cursor: pointer;
+  background: #fff0f0;
+  color: #777;
+  transition: 0.25s ease;
 }
-.product__back:hover {
-  color: var(--text);
+
+.heart-btn:hover,
+.cart-btn:hover {
+  background: #ffe1e1;
+  color: #e53935;
+  transform: translateY(-2px);
 }
-.product__layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 40px;
-  padding: 40px;
-  border-radius: 20px;
-  background: #fff;
+
+.heart-btn.is-active {
+  color: #e53935;
 }
-.product__visual {
-  display: grid;
-  place-items: center;
-  aspect-ratio: 1;
-  max-height: 420px;
-  border-radius: 16px;
-  background: var(--dark);
-  font-size: 200px;
-  line-height: 1;
+
+.heart-btn:active,
+.cart-btn:active {
+  transform: scale(0.92);
 }
-.product__visual img {
-  max-height: 80%;
-  object-fit: contain;
+
+
+/* Planshet */
+@media (max-width: 900px) {
+  .product__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: 28px;
+    margin-bottom: 48px;
+  }
+
+  .product__visual {
+    height: 350px;
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .product__price {
+    font-size: 27px;
+  }
+
+  .product__buy {
+    gap: 9px;
+  }
+
+  .btn--yellow {
+    padding: 0 18px;
+  }
+
+  .related .food-grid {
+    gap: 16px;
+  }
 }
-.product__category {
-  font-size: 13px;
-  color: var(--muted);
+
+/* Telefon */
+@media (max-width: 600px) {
+  .page {
+    width: calc(100% - 28px);
+    padding-top: 16px;
+    padding-bottom: 40px;
+  }
+
+  .product__back {
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+
+  .product__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    margin-bottom: 42px;
+  }
+
+  .product__visual {
+    height: auto;
+    aspect-ratio: 1 / 0.88;
+    min-height: 250px;
+    max-height: 390px;
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .product__visual img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .product__category {
+    margin-bottom: 10px;
+    font-size: 11px;
+  }
+
+  .product__name {
+    font-size: 31px;
+    letter-spacing: -0.8px;
+  }
+
+  .product__desc {
+    margin: 12px 0 16px;
+    font-size: 14px;
+  }
+
+  .product__price {
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+
+  .product__buy {
+    gap: 9px;
+  }
+
+  .qty {
+    min-width: 116px;
+    height: 46px;
+  }
+
+  .qty button {
+    width: 32px;
+    height: 34px;
+  }
+
+  .btn--yellow {
+    min-height: 46px;
+    padding: 0 18px;
+    border-radius: 12px;
+    font-size: 13px;
+  }
+
+  .heart-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+  }
+
+  .related {
+    margin-top: 0;
+  }
+
+  .related h2 {
+    margin-bottom: 17px;
+    font-size: 23px;
+  }
+
+  .related .food-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
 }
-.product__name {
-  margin-top: 4px;
-  font-size: 34px;
-  font-weight: 700;
+
+/* Juda kichik telefon */
+@media (max-width: 360px) {
+  .page {
+    width: calc(100% - 22px);
+  }
+
+  .product__visual {
+    min-height: 220px;
+  }
+
+  .product__name {
+    font-size: 27px;
+  }
+
+  .product__buy {
+    gap: 7px;
+  }
+
+  .qty {
+    min-width: 108px;
+  }
+
+  .btn--yellow {
+    padding: 0 13px;
+    font-size: 12px;
+  }
+
+  .heart-btn {
+    width: 42px;
+    height: 44px;
+  }
+
+  .related .food-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
 }
-.product__desc {
-  margin-top: 12px;
-  color: var(--muted);
-}
-.product__price {
-  margin: 20px 0;
-  font-size: 32px;
-  font-weight: 700;
-}
-.product__buy {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-}
-.product__added {
-  margin-top: 14px;
-  font-size: 14px;
-  color: #1a7f37;
-}
-.product__added a {
-  font-weight: 600;
-  text-decoration: underline;
-}
-.related {
-  margin-top: 56px;
-}
-.related h2 {
-  margin-bottom: 20px;
-  font-size: 22px;
+
+/* Animatsiyani kamaytirish */
+@media (prefers-reduced-motion: reduce) {
+
+  .product__back,
+  .product__visual img,
+  .qty button,
+  .btn--yellow,
+  .heart-btn {
+    transition: none;
+  }
+
+  .product__visual:hover img,
+  .btn--yellow:hover,
+  .heart-btn:hover {
+    transform: none;
+  }
 }
 
 @media (max-width: 900px) {
   .food-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
   }
 }
-@media (max-width: 800px) {
-  .product__layout {
-    grid-template-columns: 1fr;
-    padding: 20px;
-  }
-  .product__visual {
-    font-size: 140px;
-  }
-}
+
 @media (max-width: 560px) {
   .food-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .food-card {
+    padding: 10px;
+    border-radius: 16px;
+  }
+
+  .food-card__img {
+    height: 135px;
+    margin-bottom: 12px;
+  }
+
+  .food-card h3 {
+    font-size: 13px;
+  }
+
+  .food-card p {
+    font-size: 10px;
+  }
+
+  .food-card__price {
+    font-size: 15px;
+  }
+}
+
+
+/* ==========================================
+   CUSTOMER REVIEWS — PREMIUM DESIGN
+   Eski ProductCard, Like va Cart stillari saqlangan
+========================================== */
+
+/* Grid ichida bitta review ochilganda yonidagi kartalar cho'zilmasin */
+.food-grid {
+  align-items: start;
+}
+
+.food-card {
+  align-self: start;
+}
+
+.product-review {
+  width: 100%;
+  min-width: 0;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #f0eee9;
+}
+
+.review-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  min-height: 39px;
+  padding: 9px 12px;
+  border: 1px solid #f1e7d5;
+  border-radius: 10px;
+  background: #fffaf0;
+  color: #333;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.review-toggle:hover,
+.review-toggle.is-open {
+  background: #fff3d9;
+  border-color: #ffc85c;
+}
+
+.review-toggle__left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.review-toggle__star {
+  color: #ffb800;
+  font-size: 18px;
+}
+
+.review-toggle__rating {
+  color: #333;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.review-toggle__count {
+  color: #888;
+  font-size: 11px;
+}
+
+.review-toggle__arrow {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffedc5;
+  color: #a66b00;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.review-panel {
+  width: 100%;
+  min-width: 0;
+  margin-top: 12px;
+  padding: 16px;
+  border: 1px solid #eee8df;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  animation: reviewAppear 0.25s ease both;
+}
+
+@keyframes reviewAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-7px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.review-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid #eee;
+}
+
+.review-panel__eyebrow {
+  color: #c28b24;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.review-panel__header h4 {
+  margin: 5px 0 0;
+  color: #222;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.review-panel__average {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  padding: 7px 11px;
+  border-radius: 9px;
+  background: #fff6e3;
+  color: #333;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.review-panel__average span {
+  color: #ffb800;
+}
+
+.review-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 22px 10px;
+  text-align: center;
+}
+
+.review-empty__icon {
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background: #fff5e3;
+  font-size: 20px;
+}
+
+.review-empty strong {
+  color: #333;
+  font-size: 13px;
+}
+
+.review-empty p {
+  margin: 5px 0 0;
+  color: #999;
+  font-size: 11px;
+}
+
+.review-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.review-spinner {
+  width: 27px;
+  height: 27px;
+  border: 3px solid #f1e8d8;
+  border-top-color: #ffb800;
+  border-radius: 50%;
+  animation: reviewSpin 0.7s linear infinite;
+}
+
+@keyframes reviewSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.review-loading p {
+  margin: 9px 0 0;
+  color: #999;
+  font-size: 11px;
+}
+
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 230px;
+  margin-top: 13px;
+  padding-right: 4px;
+  overflow-y: auto;
+}
+
+.review-item {
+  padding: 12px;
+  border: 1px solid #eeeae3;
+  border-radius: 11px;
+  background: #fdfcf9;
+}
+
+.review-item__top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.review-avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff0d0;
+  color: #a36d0b;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.review-item__user {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.review-item__user strong {
+  color: #333;
+  font-size: 12px;
+}
+
+.review-stars {
+  color: #ffb800;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.review-stars span {
+  color: #ddd;
+}
+
+.review-item__comment {
+  margin: 10px 0 0 !important;
+  color: #777 !important;
+  font-size: 12px !important;
+  line-height: 1.6 !important;
+  overflow-wrap: anywhere;
+}
+
+.review-form {
+  margin-top: 16px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.review-form__heading h4 {
+  margin: 0;
+  color: #222;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.review-form__heading span {
+  display: block;
+  margin-top: 5px;
+  color: #999;
+  font-size: 11px;
+}
+
+.review-form__label {
+  display: block;
+  margin-top: 14px;
+  color: #555;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.review-rating {
+  display: flex;
+  gap: 6px;
+  margin: 9px 0 13px;
+}
+
+.review-rating button {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid #eee8df;
+  border-radius: 8px;
+  background: #fff;
+  color: #ddd;
+  font-size: 21px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.review-rating button.active {
+  background: #fff6e3;
+  border-color: #ffdf9b;
+  color: #ffb800;
+}
+
+.review-rating button:hover {
+  transform: scale(1.1);
+}
+
+.review-form textarea {
+  display: block;
+  width: 100%;
+  min-height: 90px;
+  padding: 12px;
+  border: 1px solid #e8e5df;
+  border-radius: 10px;
+  outline: none;
+  background: #fdfcfb;
+  color: #333;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.6;
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review-form textarea:focus {
+  border-color: #ffbf43;
+  box-shadow: 0 0 0 3px rgba(255, 184, 0, 0.1);
+}
+
+.review-form textarea::placeholder {
+  color: #aaa;
+}
+
+.review-form__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 11px;
+}
+
+.review-form__footer > span {
+  color: #aaa;
+  font-size: 10px;
+}
+
+.review-submit {
+  min-height: 38px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #ffca45, #ffae00);
+  color: #292929;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.review-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(255, 184, 0, 0.25);
+}
+
+.review-submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.review-message {
+  margin: 10px 0 0;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.review-message.error {
+  background: #fff0f0;
+  color: #d83939;
+}
+
+.review-message.success {
+  background: #edfaf0;
+  color: #26834a;
+}
+
+@media (max-width: 600px) {
+  .review-panel {
+    padding: 12px;
+  }
+
+  .review-panel__header h4 {
+    font-size: 14px;
+  }
+
+  .review-list {
+    max-height: 200px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-panel,
+  .review-spinner {
+    animation: none;
+  }
+
+  .review-rating button,
+  .review-submit {
+    transition: none;
   }
 }

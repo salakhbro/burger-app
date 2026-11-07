@@ -1,0 +1,43 @@
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
+  font-size: 13px;
+}
+
+.language-switcher__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.language-switcher select {
+  max-width: 120px;
+  padding: 8px 26px 8px 10px;
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.language-switcher option {
+  color: #1b1b1b;
+}
+
+.language-switcher--light {
+  color: #1b1b1b;
+}
+
+.language-switcher--floating {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 20;
+  color: #1b1b1b;
+}

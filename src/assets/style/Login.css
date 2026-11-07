@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+.login-container,
+.login-container *,
+.login-container *::before,
+.login-container *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Fon va konteyner */
+.login-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #31102e 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* Suzuvchi fon elementlari animatsiyasi */
+.login-container .bg-shape {
+  position: absolute;
+  font-size: 3.5rem;
+  opacity: 0.15;
+  filter: blur(1px);
+  animation: float 8s infinite ease-in-out;
+  user-select: none;
+}
+
+.login-container .shape-1 { top: 10%; left: 10%; animation-delay: 0s; }
+.login-container .shape-2 { top: 70%; left: 15%; animation-delay: 2s; font-size: 4rem; }
+.login-container .shape-3 { top: 20%; right: 12%; animation-delay: 4s; }
+.login-container .shape-4 { bottom: 15%; right: 10%; animation-delay: 6s; font-size: 4.5rem; }
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(15deg);
+  }
+}
+
+/* Login Karta (Glassmorphism) */
+.login-container .login-card {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 40px 32px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5),
+              0 0 30px rgba(245, 158, 11, 0.1);
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Sarlavha qismi */
+.login-container .brand-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-container .logo-badge {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #f59e0b, #ef4444);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+  animation: pulse 2s infinite;
+}
+
+.login-container .burger-icon {
+  font-size: 2.2rem;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 15px 35px rgba(245, 158, 11, 0.6);
+  }
+}
+
+.login-container .brand-title {
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.login-container .highlight {
+  color: #f59e0b;
+}
+
+.login-container .brand-subtitle {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
+/* Forma elementlari */
+.login-container .login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-container .input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-container .input-group label {
+  color: #e2e8f0;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.login-container .input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.login-container .input-icon {
+  position: absolute;
+  left: 14px;
+  font-size: 1.1rem;
+  opacity: 0.7;
+}
+
+.login-container .input-wrapper input {
+  width: 100%;
+  padding: 14px 14px 14px 45px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.login-container .input-wrapper input::placeholder {
+  color: #64748b;
+}
+
+.login-container .input-wrapper input:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #f59e0b;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.25);
+}
+
+.login-container .input-wrapper input:-webkit-autofill,
+.login-container .input-wrapper input:-webkit-autofill:hover,
+.login-container .input-wrapper input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0 1000px #302b52 inset;
+  transition: background-color 9999s ease-out 0s;
+}
+
+/* Opsiyalar */
+.login-container .form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.login-container .remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.login-container .remember-me input {
+  accent-color: #f59e0b;
+  cursor: pointer;
+}
+
+.login-container .forgot-link {
+  color: #f59e0b;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.login-container .forgot-link:hover {
+  color: #fbbf24;
+  text-decoration: underline;
+}
+
+/* Kirish tugmasi */
+.login-container .login-btn {
+  margin-top: 10px;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+  transition: all 0.3s ease;
+}
+
+.login-container .login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 25px rgba(245, 158, 11, 0.4);
+  background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+}
+
+.login-container .login-btn:active {
+  transform: translateY(0);
+}
+
+.login-container .arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.login-container .login-btn:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+/* Pastki havola */
+.login-container .login-footer {
+  text-align: center;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.login-container .login-footer p {
+  color: #94a3b8;
+  font-size: 0.88rem;
+}
+
+.login-container .signup-link {
+  color: #f59e0b;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.login-container .signup-link:hover {
+  text-decoration: underline;
+}
+
+.login-container .password-reset-card .brand-title {
+  color: #fff;
+}
+
+.login-container .password-reset-submit {
+  width: 100%;
+  text-decoration: none;
+}
+
+.login-container .password-reset-submit:disabled {
+  cursor: wait;
+  opacity: 0.7;
+  transform: none;
+}
+
+.login-container .password-reset-result {
+  display: grid;
+  gap: 20px;
+  color: #e2e8f0;
+  text-align: center;
+}
+
+.login-container .password-reset-error {
+  color: #fecaca;
+  font-size: 0.9rem;
+}
